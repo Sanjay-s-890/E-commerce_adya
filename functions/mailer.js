@@ -10,8 +10,8 @@ const htmlTemplate = fs.readFileSync(
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'teamlearnlegacy@gmail.com',
-        pass: 'rsnh owvp gduu yqec'
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS
     }
 });
 

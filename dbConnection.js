@@ -12,8 +12,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION)
 
 // redis connection
 const redis = new Redis({
-  host: 'localhost',
-  port: 6379
+  url:process.env.REDIS_URL
 });
 redis.on('connect', ()=>{
     console.log('redis connected');

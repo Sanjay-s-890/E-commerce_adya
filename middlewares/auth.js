@@ -1,13 +1,14 @@
 const { verifyToken } = require("../functions/jwt");
 
 // user authorization
-const auth = (req,res,next) => {
+const auth = async(req,res,next) => {
     try {
         const token = req.headers['authorization']?.split(' ')?.[1];
         if(!token){
             return res.status(400).json({message:"token not found"})
         }
-        const payload = verifyToken(token);
+        const payload = await verifyToken(token);
+        console.log(payload)
         if(!payload.success){
             return res.status(400).json({message:payload})
         }

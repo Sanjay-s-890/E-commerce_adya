@@ -24,16 +24,14 @@ const createRefreshToken = (id) =>{
 }
 
 // verify if jwt access token is correct
-const verifyToken = (token)=>{
+const verifyToken = async(token)=>{
     try{
         const decode = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
-        redis.get(decode.id+'userAccess')
-        .then((redisToken)=>{
-            if(!redisToken || token!=redisToken)
-            {
-                return { err: 'Invaid AccessToken', success: false }
-            }
-        })
+        const isValid = await redis.get(decode.id+'userAccess')
+        if(!isValid)
+        {
+            return { error: "Invalid Token", success: false };
+        }
         return { data: decode, success: true };
     }catch(err){
         return { error: err, success: false };

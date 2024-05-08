@@ -6,11 +6,14 @@ require('./dbConnection');
 const { auth } = require('./middlewares/auth');
 const checkout = require('./controllers/checkout');
 const logout = require('./controllers/logout');
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUI = require('swagger-ui-express')
+const swaggerJson = require('./openapi.json');
 
 // initializing application
 const app = express();
 app.use(express.json());
-
+app.use('/apis-adya',swaggerUI.serve,swaggerUI.setup(swaggerJson));
 // API's
 app.use('/user', userRoute);
 app.use('/product', productRoute);
