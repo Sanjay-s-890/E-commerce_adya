@@ -23,7 +23,7 @@ Welcome to the backend repository for our Ecommerce Application! This repository
 
 The API endpoints are documented using Swagger. After starting the server, you can access the Swagger UI documentation by navigating to the following URL in your web browser:
 
-https://e-commerce-adya.onrender.com/apis-adya
+http://localhost:5001/apis-ady
 
 
 
