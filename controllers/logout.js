@@ -1,5 +1,6 @@
 const redis = require("../dbConnection");
 
+// logout function
 const logout =async(req,res)=>{
     try {
         const id = req.user;

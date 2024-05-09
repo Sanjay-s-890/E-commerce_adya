@@ -3,7 +3,7 @@ const Products = require('../models/Products')
 const Orders = require('../models/Orders')
 const { default: mongoose } = require('mongoose')
 
-// checkout function
+// checkout/order function
 const checkout = async(req,res) => {
     try {
         const {products} = req.body

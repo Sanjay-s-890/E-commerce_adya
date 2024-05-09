@@ -1,6 +1,6 @@
 # Ecommerce Application Backend
 
-Welcome to the backend repository for our Ecommerce Application! This repository contains the backend implementation using Express.js, Mongoose, JWT (JSON Web Tokens), Bcrypt, and Docker.
+Welcome to the backend repository for our Ecommerce Application! This repository contains the backend implementation using Expressjs, Mongoose, JWT(JSON Web Tokens), Bcrypt, and Docker.
 
 ## Table of Contents
 

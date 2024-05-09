@@ -1,5 +1,6 @@
 const Products = require('../models/Products')
 
+// function for displaying all the products
 const showProducts = async(req,res) =>{
     try {
         const data = await Products.find();

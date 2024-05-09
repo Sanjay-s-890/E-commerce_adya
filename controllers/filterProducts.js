@@ -1,5 +1,6 @@
 const Products = require('../models/Products')
 
+// function for filtering products by minPrice, maxPrice and category
 const filterProducts = async(req,res) =>{
     try {
         const {min = null, max = null, category = null} = req.query;

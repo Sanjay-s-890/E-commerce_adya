@@ -1,5 +1,6 @@
 const Products = require('../models/Products')
 
+// function for searching products by name
 const searchProducts = async(req,res) =>{
     try {
         const { name } = req.params;

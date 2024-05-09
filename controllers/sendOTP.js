@@ -3,7 +3,7 @@ const sendMail = require('../functions/mailer');
 const generateOTP = require('../functions/otpGenerator');
 const User = require('../models/Users')
 
-
+// function for sending otp to mail
 const sendOTP = async(req,res) =>{
     try {
         const {email} = req.body;
