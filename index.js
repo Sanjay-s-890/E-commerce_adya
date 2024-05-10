@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const userRoute = require('./routes/userRoute');
 const productRoute = require('./routes/productRoute');
+const orderRoute = require('./routes/orderRoute')
 require('./dbConnection');
 const { auth } = require('./middlewares/auth');
 const checkout = require('./controllers/checkout');
@@ -17,6 +18,7 @@ app.use('/apis-adya',swaggerUI.serve,swaggerUI.setup(swaggerJson));
 // API's
 app.use('/user', userRoute);
 app.use('/product', productRoute);
+app.use('/order', orderRoute)
 app.post('/checkout', auth, checkout);
 app.post('/logout',auth, logout);
 
