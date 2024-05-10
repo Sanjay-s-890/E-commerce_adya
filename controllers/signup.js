@@ -1,9 +1,6 @@
 const User = require('../models/Users')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 const {createAccessToken, createRefreshToken} = require('../functions/jwt')
-const otp = require('../functions/otpGenerator')
-const sendMail = require('../functions/mailer')
 const redis = require('../dbConnection')
 
 // signup function
@@ -17,11 +14,12 @@ const signup = async(req,res) =>{
         
         const redisValue = await redis.get(email);
         console.log(redisValue);
-        redis.del(email)
         
         if(redisValue!=otp){
             return res.status(400).json({message:"Incorrect OTP."})
         }
+
+        redis.del(email)
 
         const isExisting = await User.findOne({email:email})
         if(isExisting){

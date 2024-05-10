@@ -6,15 +6,26 @@
   },
   "servers": [
     {
-      "url": "https://e-commerce-adya-3.onrender.com"
+      "url": "http://localhost:5001"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
     }
   ],
   "paths": {
     "/user/sendotp": {
       "post": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "sendOTP",
         "requestBody": {
           "content": {
@@ -40,9 +51,7 @@
     },
     "/user/signup": {
       "post": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "signup",
         "requestBody": {
           "content": {
@@ -71,9 +80,7 @@
     },
     "/user/login": {
       "post": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "login",
         "requestBody": {
           "content": {
@@ -100,9 +107,7 @@
     },
     "/user/refresh": {
       "get": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "refreshToken",
         "parameters": [
           {
@@ -126,9 +131,7 @@
     },
     "/product/": {
       "get": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "getAllProducts",
         "responses": {
           "200": {
@@ -142,9 +145,7 @@
     },
     "/product/search/iphone": {
       "get": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "searchProducts",
         "responses": {
           "200": {
@@ -158,9 +159,7 @@
     },
     "/product/filter": {
       "get": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "filterProducts",
         "parameters": [
           {
@@ -200,9 +199,7 @@
     },
     "/checkout": {
       "post": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "orderProduct",
         "requestBody": {
           "content": {
@@ -225,16 +222,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            },
-            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2JmOGM2NzI1OGMxY2Q4Y2VlNTI0YiIsImlhdCI6MTcxNTIwNjQxMywiZXhwIjoxNzE1MjA4MjEzfQ.NSieuQeU1AxKUEyOgwdmEPbHxGqtpHIAgzGStywSZ5U"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -247,23 +234,11 @@
     },
     "/logout": {
       "post": {
-        "tags": [
-          "default"
-        ],
+        "tags": ["default"],
         "summary": "logout",
         "requestBody": {
           "content": {}
         },
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            },
-            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2JmOGM2NzI1OGMxY2Q4Y2VlNTI0YiIsImlhdCI6MTcxNTIwNjQxMywiZXhwIjoxNzE1MjA4MjEzfQ.NSieuQeU1AxKUEyOgwdmEPbHxGqtpHIAgzGStywSZ5U"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful response",

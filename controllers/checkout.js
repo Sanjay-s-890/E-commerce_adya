@@ -1,7 +1,6 @@
-const Users = require('../models/Users')
 const Products = require('../models/Products')
 const Orders = require('../models/Orders')
-const { default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
 
 // checkout/order function
 const checkout = async(req,res) => {

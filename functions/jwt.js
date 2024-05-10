@@ -27,7 +27,7 @@ const createRefreshToken = (id) =>{
 const verifyToken = async(token)=>{
     try{
         const decode = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
-        const isValid = await redis.get(decode.id+'userAccess')
+        const isValid = await redis.get(decode?.id+'userAccess')
         if(!isValid)
         {
             return { error: "Invalid Token", success: false };
